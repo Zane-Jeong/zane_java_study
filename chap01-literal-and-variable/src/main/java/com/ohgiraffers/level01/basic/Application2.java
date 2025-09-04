@@ -12,11 +12,11 @@ public class Application2 {
          * 면적 : 455.0
          * 둘레 : 97.8
          *  */
-        float horizontal = 12.5f;
-        float vertical = 36.5f;
+        double horizontal = 12.5;
+        double vertical = 36.4;
 
-        float area = horizontal * vertical;
-        float perimeter = (horizontal+vertical) * 2;
+        double area = horizontal * vertical;
+        double perimeter = (horizontal+vertical) * 2;
 
         System.out.println(area);
         System.out.println(perimeter);
