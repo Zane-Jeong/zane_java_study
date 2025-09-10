@@ -23,8 +23,9 @@ public class Application2 {
         }
         System.out.println(Arrays.toString(num));
         // 4개의 난수 생성
+        int count = 10;
         while(true) {
-            int boll = 0, strike = 0, count = 10;
+            int boll = 0, strike = 0;
             Scanner sc = new Scanner(System.in);
             System.out.print("4자리 숫자를 입력하세요 : ");
             String line = sc.nextLine();      // "1234"
@@ -36,6 +37,18 @@ public class Application2 {
             if (Arrays.equals(num, num2)) {
                 System.out.println("정답입니다.");
                 break;
+            } else if (count == 0) {
+                break;
+            } else {
+                count--;
+                System.out.println(count + "회 남으셨습니다.");
+                for (int i = 0; i < num.length; i++) {
+                    for (int j = 0; j < num.length; j++) {
+                        if (num[j] == num2[i]) {
+                            boll++;
+                        }
+                    }
+                }
             }
         }
     }
