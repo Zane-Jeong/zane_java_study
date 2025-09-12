@@ -47,15 +47,15 @@ public class Book /* extends Object */{
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "number=" + number +
-                ", title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                ", price=" + price +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Book{" +
+//                "number=" + number +
+//                ", title='" + title + '\'' +
+//                ", author='" + author + '\'' +
+//                ", price=" + price +
+//                '}';
+//    }
 
     @Override
     public boolean equals(Object o) {
