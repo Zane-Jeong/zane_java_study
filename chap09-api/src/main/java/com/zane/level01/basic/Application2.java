@@ -1,6 +1,7 @@
 package com.zane.level01.basic;
 
 import java.util.Scanner;
+import java.util.*;
 
 public class Application2 {
 
@@ -26,13 +27,37 @@ public class Application2 {
         for(int i = 0; i < newText.length; i++) {
             System.out.println("newText[" + i + "] : " + newText[i]);		//정상 출력
         }
+
         System.out.println("===== 단어 빈도 =====");
-        for (int j = 0; j < newText.length - 1; j++) {
-            for (int i = j + 1; i < newText.length; i++) {
-                if (!newText[j].isEmpty() && newText[j].equals(newText[i])) {
-                    System.out.println(newText[i]);
-                }
+
+// 단어 빈도 저장할 HashMap 생성
+        HashMap<String, Integer> map = new HashMap<>();
+
+        for (String word : newText) {
+            if (word.trim().length() == 0) continue; // 빈 문자열은 패스
+
+            if (map.containsKey(word)) {
+                map.put(word, map.get(word) + 1);   // 기존 값 +1
+            } else {
+                map.put(word, 1);                   // 처음 등장
             }
         }
+
+// 단어와 빈도 출력
+        for (String key : map.keySet()) {
+            System.out.println(key + ": " + map.get(key));
+        }
+
+// 가장 많이 나온 단어 찾기
+        String mostWord = null;
+        int maxCount = 0;
+        for (String key : map.keySet()) {
+            int count = map.get(key);
+            if (count > maxCount) {
+                maxCount = count;
+                mostWord = key;
+            }
+        }
+        System.out.println("가장 빈도 높은 단어 : " + mostWord + " (" + maxCount + " 번)");
     }
 }
